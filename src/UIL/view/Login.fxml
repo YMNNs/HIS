@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ MIT License
+  ~
+  ~ Copyright (c) 2019. 杨梦博
+  ~
+  ~ Permission is hereby granted, free of charge, to any person obtaining a copy
+  ~ of this software and associated documentation files (the "Software"), to deal
+  ~ in the Software without restriction, including without limitation the rights
+  ~ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  ~ copies of the Software, and to permit persons to whom the Software is
+  ~ furnished to do so, subject to the following conditions:
+  ~
+  ~ The above copyright notice and this permission notice shall be included in all
+  ~ copies or substantial portions of the Software.
+  ~
+  ~ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  ~ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  ~ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  ~ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  ~ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  ~ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  ~ SOFTWARE.
+  -->
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="500.0" maxWidth="600.0" minHeight="500.0" minWidth="600.0"
+            prefHeight="500.0"
+            prefWidth="600.0" stylesheets="@StyleSheet/Common.css"
+            xmlns="http://javafx.com/javafx/8.0.171" fx:controller="UIL.view.LoginController">
+    <children>
+        <GridPane minHeight="500.0" minWidth="600.0" prefHeight="500.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0"
+                  AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="194.0" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="314.0" minWidth="10.0" prefWidth="314.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="138.0" minWidth="10.0" prefWidth="100.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="117.0" minHeight="10.0" prefHeight="113.0" vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="125.0" minHeight="10.0" prefHeight="117.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <children>
+                <JFXTextField fx:id="username" prefHeight="70.0" prefWidth="314.0" promptText="用户名"
+                              style="-fx-font-size: 20;" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                <JFXButton fx:id="button1" onAction="#checkUsername" prefHeight="40.0" prefWidth="105.0"
+                           ripplerFill="#1565c0" style="-fx-font-size: 20; -fx-background-color: #42A5F5;" text="继续"
+                           textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4"
+                           GridPane.valignment="TOP"/>
+                <Group fx:id="button2and3" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.valignment="TOP">
+                    <children>
+                        <JFXButton fx:id="button2" layoutX="213.10000610351562" layoutY="3.100006103515625"
+                                   onAction="#checkPassword" prefHeight="40.0" prefWidth="105.0" ripplerFill="#1565c0"
+                                   style="-fx-font-size: 20; -fx-background-color: #42A5F5;" text="登录"
+                                   textFill="WHITE"/>
+                        <JFXButton fx:id="button3" layoutX="4.100006103515625" layoutY="3.100006103515625"
+                                   onAction="#back" prefHeight="40.0" prefWidth="105.0" style="-fx-font-size: 20;"
+                                   text="返回" textFill="#383838"/>
+                    </children>
+                </Group>
+                <Text fx:id="text1" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" styleClass="Title"
+                      text="登录" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="BOTTOM"/>
+                <JFXPasswordField fx:id="password" prefHeight="71.0" prefWidth="314.0" promptText="密码"
+                                  style="-fx-font-size: 20;" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+            </children>
+            <cursor>
+                <Cursor fx:constant="DEFAULT"/>
+            </cursor>
+        </GridPane>
+    </children>
+</AnchorPane>

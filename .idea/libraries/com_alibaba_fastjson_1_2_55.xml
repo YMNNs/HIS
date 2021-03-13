@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="com.alibaba:fastjson:1.2.55" type="repository">
+    <properties maven-id="com.alibaba:fastjson:1.2.55" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/fastjson-1.2.55.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/lib/fastjson-1.2.55-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/fastjson-1.2.55-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

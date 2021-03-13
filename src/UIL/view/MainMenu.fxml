@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ MIT License
+  ~
+  ~ Copyright (c) 2019. 杨梦博
+  ~
+  ~ Permission is hereby granted, free of charge, to any person obtaining a copy
+  ~ of this software and associated documentation files (the "Software"), to deal
+  ~ in the Software without restriction, including without limitation the rights
+  ~ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  ~ copies of the Software, and to permit persons to whom the Software is
+  ~ furnished to do so, subject to the following conditions:
+  ~
+  ~ The above copyright notice and this permission notice shall be included in all
+  ~ copies or substantial portions of the Software.
+  ~
+  ~ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  ~ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  ~ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  ~ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  ~ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  ~ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  ~ SOFTWARE.
+  -->
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="anchorPane" prefHeight="720.0" prefWidth="1280.0"
+            stylesheets="@StyleSheet/Common.css" xmlns="http://javafx.com/javafx/8.0.171"
+            fx:controller="UIL.view.MainMenuController">
+    <children>
+        <GridPane fx:id="gridPane" hgap="20.0" prefHeight="720.0" prefWidth="1280.0" vgap="20.0"
+                  AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                  AnchorPane.topAnchor="0.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <children>
+                <Text fx:id="text1" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" text="欢迎，谁谁谁"
+                      wrappingWidth="512.0" GridPane.columnIndex="1"/>
+                <JFXButton fx:id="exit" onAction="#close" prefHeight="40.0" prefWidth="105.0" ripplerFill="#1565c0"
+                           style="-fx-font-size: 20; -fx-background-color: #42A5F5;" text="退出" textFill="WHITE"
+                           GridPane.columnIndex="3" GridPane.halignment="RIGHT"/>
+                <Text fx:id="text11" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" text="系统管理员"
+                      wrappingWidth="259.0" GridPane.columnIndex="1" GridPane.valignment="BOTTOM"/>
+                <Button fx:id="registryStation" mnemonicParsing="false" onAction="#toRegistryStation" prefHeight="209.0"
+                        prefWidth="290.0" text="挂号收费工作站" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                <Button fx:id="doctorStation" mnemonicParsing="false" onAction="#toDoctorStation" prefHeight="209.0"
+                        prefWidth="290.0" text="门诊医生工作站" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                <Button fx:id="pharmacyStation" mnemonicParsing="false" onAction="#toPharmacyStation" prefHeight="209.0"
+                        prefWidth="290.0" text="药房工作站" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                <Button fx:id="departmentMgr" mnemonicParsing="false" onAction="#toDepartmentMgr" prefHeight="209.0"
+                        prefWidth="290.0" text="科室管理" GridPane.columnIndex="2" GridPane.rowIndex="4"/>
+                <Button fx:id="doctorMgr" mnemonicParsing="false" onAction="#toDoctorMgr" prefHeight="209.0"
+                        prefWidth="290.0" text="医生管理" GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+                <Button fx:id="shiftMgr" mnemonicParsing="false" onAction="#toShiftMgr" prefHeight="209.0"
+                        prefWidth="290.0" text="医生排班" GridPane.columnIndex="3" GridPane.rowIndex="3"/>
+                <Button fx:id="itemMgr" mnemonicParsing="false" onAction="#toStoreMgr" prefHeight="209.0"
+                        prefWidth="290.0" text="药品管理" GridPane.columnIndex="3" GridPane.rowIndex="4"/>
+                <Button fx:id="NurseStation" mnemonicParsing="false" onAction="#toNurseStation" prefHeight="147.0"
+                        prefWidth="228.0" text="护士工作站" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+                <Button fx:id="recordMgr" mnemonicParsing="false" onAction="#toRecordMgr" prefHeight="209.0"
+                        prefWidth="290.0" text="就诊记录" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+                <Text fx:id="debugText" strokeType="OUTSIDE" strokeWidth="0.0" text="调试模式，不会保存数据和读取数据"
+                      GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP"/>
+            </children>
+            <padding>
+                <Insets bottom="10.0" left="30.0" right="30.0" top="10.0"/>
+            </padding>
+        </GridPane>
+    </children>
+</AnchorPane>

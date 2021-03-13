@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="720.0" prefWidth="1280.0"
+            style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171"
+            fx:controller="UIL.view.RecordMgrController">
+    <children>
+        <GridPane hgap="20.0" prefHeight="720.0" prefWidth="1280.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <padding>
+                <Insets bottom="10.0" left="30.0" right="30.0" top="10.0"/>
+            </padding>
+            <children>
+                <JFXButton fx:id="returnButton" onAction="#goMainMenu" prefHeight="32.0" prefWidth="99.0"
+                           style="-fx-background-color: #42A5F5;" text="返回" textFill="WHITE" GridPane.columnIndex="12"
+                           GridPane.rowIndex="1"/>
+                <JFXTreeView fx:id="diseaseTypeTree" prefHeight="0.0" prefWidth="75.0" showRoot="false"
+                             GridPane.columnIndex="1" GridPane.columnSpan="11" GridPane.rowIndex="1"
+                             GridPane.rowSpan="4"/>
+                <TableView fx:id="recordTable" prefHeight="0.0" prefWidth="75.0" GridPane.columnIndex="1"
+                           GridPane.columnSpan="11" GridPane.rowIndex="6" GridPane.rowSpan="4">
+                    <columns>
+                        <TableColumn fx:id="ticketIdColumn" prefWidth="79.0" text="病历号"/>
+                        <TableColumn fx:id="nameColumn" prefWidth="97.0" text="姓名"/>
+                        <TableColumn fx:id="sexColumn" prefWidth="75.0" text="性别"/>
+                        <TableColumn fx:id="dateColumn" prefWidth="138.0" text="就诊日期"/>
+                        <TableColumn fx:id="diseaseTypeColumn" prefWidth="115.0" text="病种"/>
+                        <TableColumn fx:id="diagnoseColumn" prefWidth="241.0" text="诊断"/>
+                        <TableColumn fx:id="rxColumn" prefWidth="281.0" text="处方"/>
+                    </columns>
+                </TableView>
+                <JFXButton fx:id="getPatientsButton" onAction="#getPatients" prefHeight="30.0" prefWidth="317.0"
+                           style="-fx-background-color: #42A5F5;" text="查询" textFill="WHITE" GridPane.columnIndex="5"
+                           GridPane.columnSpan="3" GridPane.rowIndex="5"/>
+                <JFXTextField fx:id="diseaseTypeQuery" promptText="病种名称或简称" GridPane.columnIndex="1"
+                              GridPane.columnSpan="4"/>
+                <JFXButton fx:id="searchDiseaseTypeButton" onAction="#searchDiseaseType" prefHeight="32.0"
+                           prefWidth="213.0" style="-fx-background-color: #42A5F5;" text="搜索" textFill="WHITE"
+                           GridPane.columnIndex="5" GridPane.columnSpan="2"/>
+            </children>
+        </GridPane>
+    </children>
+</AnchorPane>

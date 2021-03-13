@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ MIT License
+  ~
+  ~ Copyright (c) 2019. 杨梦博
+  ~
+  ~ Permission is hereby granted, free of charge, to any person obtaining a copy
+  ~ of this software and associated documentation files (the "Software"), to deal
+  ~ in the Software without restriction, including without limitation the rights
+  ~ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  ~ copies of the Software, and to permit persons to whom the Software is
+  ~ furnished to do so, subject to the following conditions:
+  ~
+  ~ The above copyright notice and this permission notice shall be included in all
+  ~ copies or substantial portions of the Software.
+  ~
+  ~ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  ~ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  ~ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  ~ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  ~ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  ~ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  ~ SOFTWARE.
+  -->
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="anchorPane" prefHeight="720.0" prefWidth="1280.0"
+            style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171"
+            fx:controller="UIL.view.PharmacyStationController">
+    <children>
+        <GridPane fx:id="gridPane" hgap="20.0" layoutX="22.0" layoutY="95.0" prefHeight="720.0" prefWidth="1280.0"
+                  AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                  AnchorPane.topAnchor="0.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <opaqueInsets>
+                <Insets/>
+            </opaqueInsets>
+            <padding>
+                <Insets bottom="10.0" left="30.0" right="30.0" top="10.0"/>
+            </padding>
+            <children>
+                <JFXTextField fx:id="ticketId" prefHeight="30.0" prefWidth="254.0" promptText="病历号…"
+                              GridPane.columnSpan="3" GridPane.rowIndex="1"/>
+                <Text fx:id="name" strokeType="OUTSIDE" strokeWidth="0.0" text="谁谁谁" wrappingWidth="76.98307228088379"
+                      GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                <Text fx:id="rxId" strokeType="OUTSIDE" strokeWidth="0.0" text="处方号" wrappingWidth="344.9830722808838"
+                      GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                <TableView fx:id="medicineTable" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5"
+                           GridPane.columnSpan="8" GridPane.rowIndex="1" GridPane.rowSpan="8">
+                    <columns>
+                        <TableColumn fx:id="alias" prefWidth="96.0" text="简称"/>
+                        <TableColumn fx:id="medicineName" prefWidth="219.0" text="名称"/>
+                        <TableColumn fx:id="quantity" prefWidth="75.0" text="数量"/>
+                        <TableColumn fx:id="unit" prefWidth="74.0" text="单位"/>
+                        <TableColumn fx:id="usage" prefWidth="273.0" text="用法用量"/>
+                    </columns>
+                </TableView>
+                <JFXButton fx:id="confirmOfferButton" onAction="#confirmOffer" prefHeight="32.0" prefWidth="436.0"
+                           style="-fx-background-color: #42A5F5;" text="确认发药" textFill="WHITE" GridPane.columnSpan="4"
+                           GridPane.rowIndex="7"/>
+                <Text fx:id="status" strokeType="OUTSIDE" strokeWidth="0.0" text="状态" wrappingWidth="101.98307228088379"
+                      GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="姓名" wrappingWidth="65.98307228088379"
+                      GridPane.rowIndex="3"/>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="处方号" wrappingWidth="65.98307228088379"
+                      GridPane.rowIndex="4"/>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="状态" wrappingWidth="65.98307228088379"
+                      GridPane.rowIndex="5"/>
+                <JFXButton fx:id="cancelButton" onAction="#cancel" prefHeight="32.0" prefWidth="510.0" text="取消"
+                           GridPane.columnSpan="4" GridPane.rowIndex="8"/>
+                <JFXButton fx:id="searchButton" onAction="#search" prefHeight="30.0" prefWidth="92.0"
+                           style="-fx-background-color: #42A5F5;" text="搜索" textFill="WHITE" GridPane.columnIndex="3"
+                           GridPane.rowIndex="1"/>
+                <JFXButton fx:id="returnButton" onAction="#goMainMenu" prefHeight="30.0" prefWidth="95.0"
+                           style="-fx-background-color: #42A5F5;" text="返回" textFill="WHITE" GridPane.columnIndex="12"/>
+            </children>
+        </GridPane>
+    </children>
+</AnchorPane>

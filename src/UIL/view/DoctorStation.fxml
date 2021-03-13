@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ MIT License
+  ~
+  ~ Copyright (c) 2019. 杨梦博
+  ~
+  ~ Permission is hereby granted, free of charge, to any person obtaining a copy
+  ~ of this software and associated documentation files (the "Software"), to deal
+  ~ in the Software without restriction, including without limitation the rights
+  ~ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  ~ copies of the Software, and to permit persons to whom the Software is
+  ~ furnished to do so, subject to the following conditions:
+  ~
+  ~ The above copyright notice and this permission notice shall be included in all
+  ~ copies or substantial portions of the Software.
+  ~
+  ~ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  ~ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  ~ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  ~ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  ~ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  ~ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  ~ SOFTWARE.
+  -->
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="anchorPane" prefHeight="720.0" prefWidth="1280.0"
+            style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171"
+            fx:controller="UIL.view.DoctorStationController">
+    <children>
+        <GridPane fx:id="gridPane" hgap="20.0" layoutY="-7.0" prefHeight="720.0" prefWidth="1280.0"
+                  AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                  AnchorPane.topAnchor="-7.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <padding>
+                <Insets bottom="10.0" left="30.0" right="30.0" top="10.0"/>
+            </padding>
+            <children>
+                <TableView fx:id="waitingTable" prefHeight="103.0" prefWidth="99.0" GridPane.columnSpan="3"
+                           GridPane.rowIndex="1" GridPane.rowSpan="8">
+                    <columns>
+                        <TableColumn fx:id="id" prefWidth="103.0" sortable="false" text="病历号"/>
+                        <TableColumn fx:id="name" prefWidth="149.0" sortable="false" text="姓名"/>
+                    </columns>
+                </TableView>
+                <JFXButton fx:id="callNextButton" onAction="#callNext" prefHeight="32.0" prefWidth="369.0"
+                           style="-fx-background-color: #42A5F5;" text="呼叫下一位" textFill="WHITE" GridPane.columnSpan="3"
+                           GridPane.rowIndex="9"/>
+                <Text fx:id="currentName" strokeType="OUTSIDE" strokeWidth="0.0" text="当前患者：xxx"
+                      wrappingWidth="172.30029296875" GridPane.columnIndex="9"/>
+                <Text fx:id="currentId" strokeType="OUTSIDE" strokeWidth="0.0" text="病历号：xxx"
+                      wrappingWidth="182.30029296875" GridPane.columnIndex="11"/>
+                <JFXTextField fx:id="medicineQuery" promptText="药品/检查名称名称或简称" GridPane.columnIndex="4"
+                              GridPane.columnSpan="3" GridPane.rowIndex="5"/>
+                <TableView fx:id="searchResult" prefHeight="0.0" prefWidth="456.0" GridPane.columnIndex="4"
+                           GridPane.columnSpan="5" GridPane.rowIndex="6" GridPane.rowSpan="4">
+                    <columns>
+                        <TableColumn fx:id="alias" prefWidth="72.0" text="简称"/>
+                        <TableColumn fx:id="stockName" prefWidth="105.0" text="名称"/>
+                        <TableColumn fx:id="unit" prefWidth="48.0" text="单位"/>
+                        <TableColumn fx:id="usage" prefWidth="106.0" text="用法用量"/>
+                        <TableColumn fx:id="price" prefWidth="55.0" text="单价"/>
+                        <TableColumn fx:id="stock" prefWidth="58.0" text="库存"/>
+                    </columns>
+                </TableView>
+                <TableView fx:id="rx" prefHeight="0.0" prefWidth="268.0" GridPane.columnIndex="10"
+                           GridPane.columnSpan="3" GridPane.rowIndex="6" GridPane.rowSpan="4">
+                    <columns>
+                        <TableColumn fx:id="rxName" prefWidth="182.0" text="名称"/>
+                        <TableColumn fx:id="quantity" minWidth="0.0" prefWidth="74.0" text="数量"/>
+                    </columns>
+                </TableView>
+                <JFXButton fx:id="searchMedicineButton" onAction="#searchMedicine" prefHeight="32.0" prefWidth="251.0"
+                           style="-fx-background-color: #42A5F5;" text="搜索" textFill="WHITE" GridPane.columnIndex="7"
+                           GridPane.columnSpan="2" GridPane.rowIndex="5"/>
+                <JFXButton fx:id="confirmTicketButton" onAction="#confirmTicket" prefHeight="32.0" prefWidth="203.0"
+                           style="-fx-background-color: #42A5F5;" text="确认看诊" textFill="WHITE" GridPane.columnIndex="10"
+                           GridPane.columnSpan="2" GridPane.rowIndex="1"/>
+                <JFXButton fx:id="confirmRxButton" onAction="#confirmRx" prefHeight="32.0" prefWidth="251.0"
+                           style="-fx-background-color: #42A5F5;" text="确认处方" textFill="WHITE" GridPane.columnIndex="10"
+                           GridPane.columnSpan="2" GridPane.rowIndex="5"/>
+                <JFXButton fx:id="clearButton" onAction="#clear" prefHeight="32.0" prefWidth="251.0"
+                           style="-fx-background-color: #ff4545;" text="清空" textFill="WHITE" GridPane.columnIndex="12"
+                           GridPane.rowIndex="5"/>
+                <JFXTextArea fx:id="diagnose" prefHeight="64.0" prefWidth="796.0" promptText="诊断…"
+                             GridPane.columnIndex="9" GridPane.columnSpan="4" GridPane.rowIndex="2"
+                             GridPane.rowSpan="2"/>
+                <JFXButton fx:id="addToRxButton" onAction="#addToRx" prefHeight="97.0" prefWidth="76.0"
+                           style="-fx-background-color: #42A5F5;" text="添加" textFill="WHITE" GridPane.columnIndex="9"
+                           GridPane.rowIndex="7" GridPane.rowSpan="2"/>
+                <JFXTextField fx:id="quantityBox" promptText="数量…" GridPane.columnIndex="9" GridPane.rowIndex="6"/>
+                <JFXButton fx:id="deleteFromRxButton" onAction="#deleteFromRx" prefHeight="32.0" prefWidth="119.0"
+                           style="-fx-background-color: #ff4545;" text="删除" textFill="WHITE" GridPane.columnIndex="9"
+                           GridPane.rowIndex="9"/>
+                <JFXButton fx:id="returnButton" onAction="#goMainMenu" prefHeight="32.0" prefWidth="117.0"
+                           style="-fx-background-color: #42A5F5;" text="返回" textFill="WHITE" GridPane.columnIndex="12"
+                           GridPane.rowIndex="1"/>
+                <JFXComboBox fx:id="selectDoctorBox" onAction="#selectDoctor" prefHeight="29.0" prefWidth="295.0"
+                             promptText="选择医生……" GridPane.columnSpan="3"/>
+                <JFXTreeView fx:id="diseaseTypeTree" prefHeight="0.0" prefWidth="456.0" showRoot="false"
+                             GridPane.columnIndex="4" GridPane.columnSpan="5" GridPane.rowIndex="1"
+                             GridPane.rowSpan="4"/>
+                <JFXButton fx:id="confirmDiseaseButton" onAction="#confirmDisease" prefHeight="32.0" prefWidth="172.0"
+                           style="-fx-background-color: #42A5F5;" text="确认病种" textFill="WHITE" GridPane.columnIndex="10"
+                           GridPane.columnSpan="2" GridPane.rowIndex="4"/>
+                <JFXTextField fx:id="diseaseTypeQuery" promptText="病种名称或简称" GridPane.columnIndex="4"
+                              GridPane.columnSpan="3"/>
+                <JFXButton fx:id="searchDiseaseTypeButton" onAction="#searchDiseaseType" prefHeight="30.0"
+                           prefWidth="235.0" style="-fx-background-color: #42A5F5;" text="搜索" textFill="WHITE"
+                           GridPane.columnIndex="7" GridPane.columnSpan="2"/>
+            </children>
+        </GridPane>
+    </children>
+</AnchorPane>
